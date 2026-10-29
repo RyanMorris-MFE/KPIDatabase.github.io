@@ -165,7 +165,7 @@ const TYPES=[['scatter','Scatter (X vs Y)'],['bars','Bar per lap'],['line','Line
 function buildChartCtl(){
   if(!NUM.length){$('#cc').innerHTML='<div class="empty">No numeric channels found</div>';return}
   const no=NUM.map(k=>`<option value="${esc(k)}">${esc(lab(k))}</option>`).join('');
-  $('#cc').innerHTML=`<div class="f">Chart<select id="ctype">${TYPES.map(t=>`<option value="${t[0]}">${t[1]}</option>`).join('')}</select></div><div class="f" id="fx">X axis<select id="cx">${no}</select></div><div class="f">Y / metric<select id="cy">${no}</select></div><div class="f" id="fc">Colour / group by<select id="cb"><option value="">None</option>${FIL.map(([k,n])=>`<option value="${esc(k)}">${esc(n)}</option>`).join('')}</select></div><label class="chk" id="ftr"><input type="checkbox" id="ctr" checked>Trend line</label>`;
+  $('#cc').innerHTML=`<div class="f">Chart<select id="ctype">${TYPES.map(t=>`<option value="${t[0]}">${t[1]}</option>`).join('')}</select></div><div class="f" id="fx">X axis<select id="cx">${no}</select></div><div class="f">Y / metric<select id="cy">${no}</select></div><div class="f" id="fc">Color / group by<select id="cb"><option value="">None</option>${FIL.map(([k,n])=>`<option value="${esc(k)}">${esc(n)}</option>`).join('')}</select></div><label class="chk" id="ftr"><input type="checkbox" id="ctr" checked>Trend line</label>`;
   const y=NUM.includes('lap_time_s')?'lap_time_s':NUM[0];
   $('#cy').value=y;$('#cx').value=['fa_ptyre_start_p_bar','track_temp_degc'].find(k=>NUM.includes(k)&&k!==y)||NUM.find(k=>k!==y)||y;
   if(FIL.some(f=>f[0]==='driver'))$('#cb').value='driver';
