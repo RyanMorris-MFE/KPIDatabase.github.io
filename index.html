@@ -78,7 +78,7 @@ const EMBED={"rows":[{"driver":"MOR","event":"S13_T01ABI","session_type":"TEST",
 const $=s=>document.querySelector(s);
 let R=[],L={},COLS=[],NUM=[],FIL=[],DEC={},sel=new Set(),hasDelta=false,note='';
 const st={f:{},maxDelta:null,fastest:false};
-const BASEF=[['event','Session'],['driver','Driver'],['sequence','Sequence Type'],['power_kw','Power Mode'],['aero_kit','Aero Config']];
+const BASEF=[['event','Session'],['driver','Driver'],['sequence','Sequence'],['power_kw','Power Mode'],['aero_kit','Aero Config']];
 const IDK=['id','_i','driver','event','run','sequence'];
 const DEF=['delta_to_fastest','lap_time_s','power_kw','track_temp_degc','air_temp_degc','fa_tyre_carcass_start_p_degc','ra_tyre_carcass_start_p_degc','fa_ptyre_start_p_bar','ra_ptyre_start_p_bar','etyrefa_start_p_kj','etyrera_start_p_kj','etyrefa_start_p_wear','etyrera_start_p_wear'];
 const GRP=[['Performance','#e2232f',k=>/^(lap_time|delta)/.test(k)],['Conditions & Config','#9a9ca3',k=>/^(aero|power|compound|track|air|session)/.test(k)],['Carcass Temp','#7fc15a',k=>/carcass/.test(k)],['Tyre Air Temp','#3ec6c1',k=>/ttyreair/.test(k)],['Pressure','#a58be0',k=>/ptyre/.test(k)],['Tyre Energy','#f5a25d',k=>/^etyre.*kj|^t_e|^etyre_bal/.test(k)],['Wear','#c0c4cc',k=>/wear/.test(k)],['TTM / Surface','#5b9bf0',k=>/ttm|surface/.test(k)]];
